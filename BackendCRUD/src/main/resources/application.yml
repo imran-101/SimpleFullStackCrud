@@ -1,0 +1,11 @@
+spring:
+    application:
+        name: BackendCRUD
+    datasource:
+        username: root
+        password: idfc
+        url: jdbc:mysql://localhost:3306/crud_db
+    jpa:
+        hibernate:
+          ddl-auto: update
+        show-sql: true
