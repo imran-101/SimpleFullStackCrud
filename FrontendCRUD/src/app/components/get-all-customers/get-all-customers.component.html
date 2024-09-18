@@ -1,1 +1,23 @@
-<p>get-all-customers works!</p>
+<button class="btn-new" routerLink="/customer">Post New Customer</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let customer of customers">
+            <tr>
+                <td>{{customer.name}}</td>
+                <td>{{customer.email}}</td>
+                <td>{{customer.phone}}</td>
+                <td>
+                    <button class="btn-action" routerLink="/customer/{{customer.id}}">Update</button>
+                    <button class="btn-action delete" (click)="deleteCustomer(customer.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>

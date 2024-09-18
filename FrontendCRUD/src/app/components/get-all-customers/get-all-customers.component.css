@@ -1,0 +1,82 @@
+/* Button Styling */
+.btn-new {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+    text-decoration: none; /* For routerLink styling */
+}
+
+.btn-new:hover {
+    background-color: #218838;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+thead {
+    background-color: #007bff;
+    color: white;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    font-size: 25px;
+    text-align: center;
+}
+
+td {
+    font-size: 16px;
+    text-align: center; /* Center align text and buttons */
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Styling for action buttons (Update/Delete) inside table */
+.btn-action {
+    padding: 5px 15px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 5px;
+}
+
+.btn-action:hover {
+    background-color: #0056b3;
+}
+
+.btn-action.delete {
+    background-color: #dc3545;
+}
+
+.btn-action.delete:hover {
+    background-color: #c82333;
+}
+
+/* Optional: Ensure the action buttons inside the last table cell are aligned */
+td:last-child {
+    display: flex;
+    justify-content: center; /* Align buttons in the center */
+    gap: 10px; /*Space between buttons */
+}

@@ -4,10 +4,8 @@ import com.userimran.entity.Customer;
 import com.userimran.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -33,9 +31,9 @@ public class CustomerController {
     }
 
     @PutMapping("/customer/{id}")
-    public ResponseEntity<Customer> updateCustomer(@PathVariable Integer id,@RequestBody Customer customer) {
+    public ResponseEntity<Customer> updateCustomer(@PathVariable Integer id, @RequestBody Customer customer) {
         Customer existingCustomer = customerService.getCustomerById(id);
-        if(existingCustomer == null)
+        if (existingCustomer == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         existingCustomer.setName(customer.getName());
         existingCustomer.setEmail(customer.getEmail());
@@ -46,7 +44,7 @@ public class CustomerController {
     @DeleteMapping("/customer/{id}")
     public ResponseEntity<?> deleteCustomer(@PathVariable Integer id) {
         Customer customer = customerService.getCustomerById(id);
-        if(customer == null)
+        if (customer == null)
             return ResponseEntity.notFound().build();
         customerService.deleteCustomer(id);
         return ResponseEntity.ok().build();

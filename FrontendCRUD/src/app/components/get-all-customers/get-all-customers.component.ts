@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CustomerService } from '../../service/customer.service';
 
 @Component({
   selector: 'app-get-all-customers',
@@ -6,5 +7,27 @@ import { Component } from '@angular/core';
   styleUrl: './get-all-customers.component.css'
 })
 export class GetAllCustomersComponent {
+
+  customers!: any[];
+
+  constructor(private customerService:CustomerService){}
+
+  ngOnInit(){
+    this.getAllCustomers();
+  }
+
+  getAllCustomers(){
+    this.customerService.getAllCustomers().subscribe((res)=>{
+      console.log(res);
+      this.customers=res;
+    })
+  }
+
+  deleteCustomer(id: number){
+    this.customerService.deleteCustomer(id).subscribe((res)=>{
+      console.log(res);
+      this.getAllCustomers();
+    })
+  }
 
 }
